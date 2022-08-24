@@ -3,3 +3,4 @@ env
 .env
 venv
 
+static\img\homes
