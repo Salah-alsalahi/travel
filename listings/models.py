@@ -29,3 +29,13 @@ class Listing(models.Model):
 
   def __str__(self):
       return self.title
+
+# d=Listing.objects.first()
+class Room(models.Model):
+  listing=models.ForeignKey(Listing,null=True, related_name=("rooms"), on_delete=models.CASCADE)
+  name = models.CharField(max_length=30)
+  photo_main = models.ImageField(upload_to='photos/%Y/%m/%d/')
+  price = models.IntegerField()
+
+  def __str__(self):
+      return self.name

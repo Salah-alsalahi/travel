@@ -129,7 +129,8 @@ def listing(request, listing_id):
       dayToRes=allDaysContainer[int(i)]
       Reservation.objects.create(
         farms=listing,
-        day=dayToRes
+        day=dayToRes,
+        customer=request.user
       )
     contact = Contact(listing=listing0, listing_id=listing_id, name=name, email=email, phone=phone, message=message, user_id=user_id )
 
